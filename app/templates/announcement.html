@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Rules of Comments</h1>
+
+    <!-- 已发表的言论 -->
+    {% if comments %}
+    {% for comment in comments %}
+    <div>
+        <br><b>{{ comment.Username }}</b> declared: <a>{{ comment.Post }}</a>
+        <p>{{ comment.PostTime }}</p>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div>
+        <br><b>Administer</b> declared: <a>All Comments Free!</a>
+        <p>1948-12-10/10:00:00</p>
+    </div>
+    {% endif %}
+            <!-- ########## -->
+{% endblock %}
