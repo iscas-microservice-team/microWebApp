@@ -1,21 +1,39 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block app_content %}
     <h1>Rules of Comments</h1>
 
     <!-- 已发表的言论 -->
     {% if comments %}
     {% for comment in comments %}
-    <div>
-        <br><b>{{ comment.Username }}</b> declared: <a>{{ comment.Post }}</a>
-        <p>{{ comment.PostTime }}</p>
-    </div>
+            <div class="container">
+                <div class="panel panel-default">
+                    <!--<div class="panel-heading">-->
+                        <!--<b>{{ comment.Username }}</b> declared:-->
+                    <!--</div>-->
+                    <div class="panel-body">
+                        <h4>{{ comment.Post }}</h4>
+                    </div>
+                    <div class="panel-footer">
+                        <b>{{ comment.Username }}</b> at {{ comment.PostTime }}
+                    </div>
+                </div>
+            </div>
     {% endfor %}
     {% else %}
-    <div>
-        <br><b>Administer</b> declared: <a>All Comments Free!</a>
-        <p>1948-12-10/10:00:00</p>
-    </div>
+            <div class="container">
+                <div class="panel panel-default">
+                    <!--<div class="panel-heading">-->
+                        <!--<b>Administer</b> declared:-->
+                    <!--</div>-->
+                    <div class="panel-body">
+                        <h4>All Comments Free!</h4>
+                    </div>
+                    <div class="panel-footer">
+                        <b>Administer</b> at 1948-12-10/10:00:00
+                    </div>
+                </div>
+            </div>
     {% endif %}
             <!-- ########## -->
 {% endblock %}

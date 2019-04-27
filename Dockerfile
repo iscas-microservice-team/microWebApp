@@ -10,6 +10,7 @@ Add . /var/app/microWebApp
 RUN pip install Flask
 RUN pip install Flask-wtf
 RUN pip install requests
+RUN pip install flask-bootstrap
 # Expose port
 EXPOSE 80
 # Run command
