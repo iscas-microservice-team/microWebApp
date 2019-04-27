@@ -4,6 +4,23 @@
 
 剩余模块的组件在其他 repository 中。
 
+## 优化了基于 Docker 和 Kubernetes 运行时的参数配置
+
+通过启动容器或 yaml 中编写系统的环境变量，从而在容器外部设置各项待配置信息
+
+- DB_MANAGER_IP  数据资源层服务的 IP 地址
+
+- DB_MANAGER_PORT  数据资源层的端口号
+
+示例如下:
+
+    # for microappweb UI module
+    DB_MANAGER_IP=24.101.157.243
+    DB_MANAGER_PORT=9090
+    export DB_MANAGER_IP
+    export DB_MANAGER_PORT
+
+
 ## 使用 docker 运行本应用
 
 1. 更改 microWebApp/ 中 config.py 内的配置信息
